@@ -35,7 +35,12 @@ c:/Users/garvi/Documents/Data Science Projects/Sales and Business Data Analysis/
 │   └── 04_views_and_reports.sql            # Reusable Views for Power BI & Executive reporting
 ├── python/
 │   ├── generate_dataset.py                 # Reproducible Python script to generate the 10,000 record dataset
-│   └── sales_eda_analysis.py               # Data cleaning, IQR outlier detection, descriptive stats, and plot exporting
+│   ├── sales_eda_analysis.py               # Data cleaning, IQR outlier detection, descriptive stats, and plot exporting
+│   ├── run_sql_analysis.py                 # Live SQL query runner script on SQLite
+│   └── create_excel_model.py               # Automated OpenPyXL financial model workbook generator
+├── excel/
+│   ├── sales_analysis_model.xlsx           # Fully formatted Excel financial model & formula dashboard
+│   └── Excel_Analysis_Guide.md             # Excel SUMIFS, AVERAGEIFS, XLOOKUP, Pivot Table guide
 ├── power_bi/
 │   ├── DAX_Measures.md                     # Comprehensive repository of DAX measures
 │   └── Dashboard_Design_Guide.md           # Page-by-page layout visual specs, slicers, and color themes
@@ -56,13 +61,14 @@ c:/Users/garvi/Documents/Data Science Projects/Sales and Business Data Analysis/
 ---
 
 ## 🛠️ Technology Stack & Analytical Methods
-| Component | Tool / Library | Key Focus & Techniques |
+| Skill / Tool | Domain | Key Focus & Techniques |
 | :--- | :--- | :--- |
-| **Database & SQL** | MySQL 8.0 | Schema Design, Indexing, CTEs, Window Functions (`RANK`, `DENSE_RANK`, `LAG`, `SUM OVER`), Views |
-| **Data Science / EDA** | Python (Pandas, NumPy) | Data Hygiene, Type Casting, IQR Outlier Detection, Correlation Matrix, GroupBy Aggregations |
-| **Data Visualization** | Matplotlib | High-resolution chart exporting (300 DPI), Trend lines, Sub-category bar charts |
-| **Business Intelligence**| Power BI Desktop | DAX Time Intelligence (`TOTALYTD`, `SAMEPERIODLASTYEAR`), Star Schema Modeling, Interactive Slicers |
-| **Spreadsheets** | Microsoft Excel | Pivot Tables, Conditional Formatting, KPI summaries |
+| **SQL (MySQL / SQLite)** | Database Analytics | Schema Design, Indexing, CTEs, Window Functions (`RANK`, `DENSE_RANK`, `LAG`, `SUM OVER`), Views, Joins |
+| **Python (Pandas, NumPy)**| Data Science / EDA | Data Hygiene, Type Casting, IQR Outlier Detection, Correlation Matrix, Time Series Analysis |
+| **Python (Matplotlib)** | Data Visualization | High-resolution chart exporting (300 DPI), Trend lines, Sub-category bar charts |
+| **Excel** | Financial Modeling | Preprocessing, Pivot Tables, SUMIFS, AVERAGEIFS, XLOOKUP, INDEX/MATCH, Conditional Formatting |
+| **Power BI Desktop** | Business Intelligence | DAX Time Intelligence (`TOTALYTD`, `SAMEPERIODLASTYEAR`), Star Schema Modeling, Interactive Slicers |
+| **Business Analysis** | Strategy & Insights | Discount Toxicity Elasticity, Loss Leaders, Customer LTV Segmentation, 15 Growth Recommendations |
 
 ---
 
