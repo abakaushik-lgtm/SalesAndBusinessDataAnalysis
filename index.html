@@ -12,7 +12,7 @@
 <body class="bg-slate-900 text-slate-100 font-sans p-6">
     <div class="max-w-7xl mx-auto space-y-6">
         
-        <!-- Header Banner & Top-Right Refresh Indicator (Items 1 & 2) -->
+        <!-- Header Banner & Top-Right Refresh Indicator -->
         <header class="flex flex-col md:flex-row justify-between items-start md:items-center bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg">
             <div>
                 <h1 class="text-3xl font-extrabold text-white tracking-tight">Executive Business Intelligence Dashboard</h1>
@@ -25,7 +25,7 @@
             </div>
         </header>
 
-        <!-- Executive Key Insights Panel (Item 5) -->
+        <!-- Executive Key Insights Panel (Item 1 Rephrasing) -->
         <section class="bg-slate-800 p-5 rounded-xl border border-slate-700 shadow">
             <h2 class="text-sm font-bold uppercase tracking-wider text-blue-400 mb-3 flex items-center gap-2">
                 💡 Executive Key Insights
@@ -38,7 +38,7 @@
                     💰 <strong>Margin Engine:</strong> Technology products generated <strong>90.2% ($1.30M)</strong> of total enterprise net profit.
                 </div>
                 <div class="bg-slate-900/60 p-3 rounded border border-slate-700/60">
-                    🛒 <strong>Customer Retention:</strong> Repeat buyers represent <strong>99.8% of customer base</strong> <em>(Sample multi-purchase cohort)</em>.
+                    🛒 <strong>Customer Retention:</strong> Repeat buyers represent 99.8% of the customer base (based on the sample dataset).
                 </div>
                 <div class="bg-slate-900/60 p-3 rounded border border-slate-700/60">
                     📉 <strong>Discount Profit Impact:</strong> Discounts above <strong>20% reduced profit margin to -4.5%</strong>.
@@ -52,7 +52,7 @@
             </div>
         </section>
 
-        <!-- Recruiters Expected KPI Cards Grid (Items 3 & 4: Compact, Trend Arrows & Business-Friendly Subtitles) -->
+        <!-- Recruiters Expected KPI Cards Grid (Item 2 Terminology: Active Products) -->
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
             
             <!-- Revenue (Blue) -->
@@ -98,7 +98,7 @@
             <!-- Products (Indigo) -->
             <div class="bg-slate-800 p-3 rounded-lg border-l-4 border-indigo-500 shadow border-slate-700 flex flex-col justify-between h-24">
                 <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Products Sold</div>
-                <div class="text-2xl font-black text-indigo-400 tracking-tight">21 SKUs</div>
+                <div class="text-2xl font-black text-indigo-400 tracking-tight">21 Active</div>
                 <div class="text-[10px] text-indigo-400 font-bold">Catalog Lines</div>
                 <div class="text-[9px] text-slate-400">Products Sold</div>
             </div>
@@ -121,19 +121,51 @@
 
         </div>
 
-        <!-- Interactive Charts Section -->
+        <!-- Interactive Charts Section (Item 3: Increased Line Chart Height by 20%) -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <!-- Monthly Trend Chart -->
             <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow">
                 <h2 class="text-lg font-bold text-white mb-4">Monthly Revenue Velocity vs Net Profit ($K)</h2>
-                <canvas id="monthlyTrendChart" height="200"></canvas>
+                <canvas id="monthlyTrendChart" height="240"></canvas>
             </div>
             <!-- Category Profitability Chart -->
             <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow">
                 <h2 class="text-lg font-bold text-white mb-4">Category Revenue vs Profit Breakdown</h2>
-                <canvas id="categoryChart" height="200"></canvas>
+                <canvas id="categoryChart" height="240"></canvas>
             </div>
         </div>
+
+        <!-- Forecasting & Business Outlook Section (Item 4 Feature) -->
+        <section class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                    🔮 Forecasting & Business Outlook (2026 H1 Projections)
+                </h2>
+                <span class="text-xs text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20 font-semibold">
+                    Linear Moving Velocity Model
+                </span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2">
+                    <canvas id="forecastChart" height="180"></canvas>
+                </div>
+                <div class="space-y-3 bg-slate-900/60 p-4 rounded-lg border border-slate-700/60">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">H1 Projected Highlights</h3>
+                    <div>
+                        <div class="text-xs text-slate-400">H1 Projected Sales</div>
+                        <div class="text-xl font-black text-blue-400">$2.67M <span class="text-xs text-emerald-400 font-normal">(+8.4% YoY)</span></div>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400">H1 Projected Net Profit</div>
+                        <div class="text-xl font-black text-emerald-400">$349.7K <span class="text-xs text-emerald-400 font-normal">(+11.2% YoY)</span></div>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400">Projected Margin Target</div>
+                        <div class="text-xl font-black text-amber-400">12.6% <span class="text-xs text-emerald-400 font-normal">(+1.8% Gain)</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Discount Impact Matrix & Regional Distribution -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -150,7 +182,7 @@
             </div>
         </div>
 
-        <!-- Strategic Business Recommendations Section (Item 4) -->
+        <!-- Strategic Business Recommendations Section -->
         <section class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow">
             <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 🎯 Strategic Business Recommendations
@@ -182,7 +214,7 @@
     </div>
 
     <script>
-        // Monthly Trend Chart
+        // Monthly Trend Chart (Height Increased by 20%)
         new Chart(document.getElementById('monthlyTrendChart'), {
             type: 'line',
             data: {
@@ -223,6 +255,32 @@
                     label: 'Profit ($M)',
                     data: [1.30, 0.09, 0.05],
                     backgroundColor: '#10B981'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { labels: { color: '#94A3B8' } } },
+                scales: { x: { ticks: { color: '#94A3B8' } }, y: { ticks: { color: '#94A3B8' } } }
+            }
+        });
+
+        // Forecast Chart
+        new Chart(document.getElementById('forecastChart'), {
+            type: 'line',
+            data: {
+                labels: ['2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06'],
+                datasets: [{
+                    label: 'Projected Sales ($K)',
+                    data: [435.0, 412.0, 425.0, 448.0, 460.0, 485.0],
+                    borderColor: '#38BDF8',
+                    borderDash: [5, 5],
+                    tension: 0.3
+                }, {
+                    label: 'Projected Profit ($K)',
+                    data: [52.2, 49.4, 51.0, 58.2, 61.0, 67.9],
+                    borderColor: '#34D399',
+                    borderDash: [5, 5],
+                    tension: 0.3
                 }]
             },
             options: {

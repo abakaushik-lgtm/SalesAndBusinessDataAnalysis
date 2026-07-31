@@ -11,10 +11,33 @@
 
 ---
 
-## 📌 Executive Summary & Business Problem Statement
+## 📌 Project Overview & Business Problem
 **Global Retail Corp** is a multi-region retail enterprise experiencing revenue growth alongside margin contraction in specific product categories and regional territories. Despite generating **$13.36M in gross sales** over a 3-year period (2023–2025), executive leadership lacked visibility into discount toxicity thresholds, regional logistics cost drains, and customer lifetime value segmentation.
 
-This project delivers a **Senior Data Analyst portfolio-grade solution** by building an end-to-end data pipeline, SQL database architecture, Python exploratory data analysis (EDA), and an interactive **6-page Power BI dashboard suite**.
+This project delivers a **Senior Data Analyst portfolio-grade solution** by building an end-to-end data pipeline, SQL database architecture, Python exploratory data analysis (EDA), and an interactive **Streamlit & Power BI dashboard suite**.
+
+---
+
+## 📊 Dataset Overview (10,000 Transactions)
+The dataset comprises 10,000 order transactions across 22 columns:
+`Order ID`, `Order Date`, `Ship Date`, `Customer ID`, `Customer Name`, `Gender`, `Age`, `City`, `State`, `Region`, `Product ID`, `Product Category`, `Sub Category`, `Product Name`, `Quantity`, `Unit Price`, `Discount`, `Sales`, `Profit`, `Shipping Cost`, `Payment Mode`, `Order Priority`.
+
+---
+
+## 🗄️ SQL Analysis & Database Queries
+The project features 4 production SQL scripts (`sql/`) executing:
+- **Core Aggregations**: Total Sales, Profit, AOV, Profit Margin %, Average Discount.
+- **Window Functions**: `RANK()`, `DENSE_RANK()`, `SUM() OVER()`, `LAG() OVER()` MoM Growth.
+- **Customer Segmentation**: RFM Monetary LTV Tiers & Repeat vs New customer logic.
+- **Database Views**: 5 reusable views (`vw_executive_kpis`, `vw_monthly_sales_trend`, `vw_category_profitability`, `vw_regional_performance`, `vw_customer_summary`).
+
+---
+
+## 💻 Streamlit & Power BI Interactive Dashboard Features
+- **Real-Time Slicers**: Filter by Year (2023–2025), Region, Product Category, Payment Mode.
+- **Executive Metric Cards**: Compact KPI layout with trend indicators (`▲ +12.4% YoY`).
+- **6 Interactive Pages**: Executive Trends, Profitability & Discount Impact, Customer Analytics, Product Portfolio, Regional Performance, and **🔮 Forecasting & Business Outlook**.
+- **Automated Alerts**: Warning banners for negative margin scenario filters.
 
 ---
 
