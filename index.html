@@ -12,77 +12,111 @@
 <body class="bg-slate-900 text-slate-100 font-sans p-6">
     <div class="max-w-7xl mx-auto space-y-6">
         
-        <!-- Header Banner & Company Branding -->
+        <!-- Header Banner & Top-Right Refresh Indicator (Items 1 & 2) -->
         <header class="flex flex-col md:flex-row justify-between items-start md:items-center bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg">
             <div>
-                <h1 class="text-3xl font-extrabold text-white tracking-tight">Global Retail Sales Analytics</h1>
-                <p class="text-blue-400 text-sm font-semibold mt-1">Executive Business Intelligence Dashboard | Retail Sales Performance (2023–2025)</p>
+                <h1 class="text-3xl font-extrabold text-white tracking-tight">Executive Business Intelligence Dashboard</h1>
+                <p class="text-blue-400 text-sm font-semibold mt-1">Retail Sales Performance Analysis (2023–2025)</p>
             </div>
-            <div class="mt-4 md:mt-0 text-left md:text-right">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                    🟢 Live System Active
-                </span>
-                <p class="text-xs text-slate-400 mt-1">Dataset: 10,000 Order Transactions</p>
+            <div class="mt-4 md:mt-0 text-left md:text-right bg-slate-900/60 p-3 rounded-lg border border-slate-700">
+                <p class="text-xs text-emerald-400 font-bold">🟢 Reporting Period: 2023–2025</p>
+                <p class="text-xs text-slate-300 mt-0.5"><strong>Last Updated:</strong> Jul 2026</p>
+                <p class="text-[11px] text-slate-400 mt-0.5">Source: Global Retail Sales Dataset</p>
             </div>
         </header>
 
-        <!-- Expanded Recruiters KPI Cards Grid (Compact Height & Semantic Colors) -->
+        <!-- Executive Key Insights Panel (Item 5) -->
+        <section class="bg-slate-800 p-5 rounded-xl border border-slate-700 shadow">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-blue-400 mb-3 flex items-center gap-2">
+                💡 Executive Key Insights & Strategic Highlights
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                <div class="bg-slate-900/60 p-3 rounded border border-slate-700/60">
+                    📈 <strong>Regional Share:</strong> West region contributed <strong>24.5% ($3.28M)</strong> of total revenue; Central led with <strong>$3.72M</strong>.
+                </div>
+                <div class="bg-slate-900/60 p-3 rounded border border-slate-700/60">
+                    💰 <strong>Margin Engine:</strong> Technology products generated <strong>90.2% ($1.30M)</strong> of total enterprise net profit.
+                </div>
+                <div class="bg-slate-900/60 p-3 rounded border border-slate-700/60">
+                    🛒 <strong>Customer Value:</strong> VIP High-Value customers generated <strong>73.1% ($9.77M)</strong> of total revenue.
+                </div>
+                <div class="bg-slate-900/60 p-3 rounded border border-slate-700/60">
+                    📉 <strong>Discount Toxicity:</strong> Discounts above <strong>20% reduced profit margin</strong> into net losses (-4.5%).
+                </div>
+                <div class="bg-slate-900/60 p-3 rounded border border-slate-700/60">
+                    ⭐ <strong>Top Spenders:</strong> Top 10 customers generated over <strong>$375,000 in cumulative sales</strong>.
+                </div>
+                <div class="bg-slate-900/60 p-3 rounded border border-slate-700/60">
+                    📦 <strong>Office Supplies Efficiency:</strong> Highest profit margin percentage at <strong>27.8%</strong>.
+                </div>
+            </div>
+        </section>
+
+        <!-- Recruiters Expected KPI Cards Grid (Items 3 & 4: Compact, Trends & Business-Friendly Subtitles) -->
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
             
             <!-- Revenue (Blue) -->
             <div class="bg-slate-800 p-3 rounded-lg border-l-4 border-blue-500 shadow border-slate-700 flex flex-col justify-between h-24">
-                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Revenue</div>
+                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Total Revenue</div>
                 <div class="text-2xl font-black text-blue-400 tracking-tight">$13.36M</div>
-                <div class="text-[10px] text-slate-400">Gross Sales</div>
+                <div class="text-[10px] text-emerald-400 font-semibold">▲ 12.4% YoY Growth</div>
+                <div class="text-[9px] text-slate-400">Total Revenue Generated</div>
             </div>
 
             <!-- Profit (Green) -->
             <div class="bg-slate-800 p-3 rounded-lg border-l-4 border-emerald-500 shadow border-slate-700 flex flex-col justify-between h-24">
-                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Net Profit</div>
+                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Total Profit</div>
                 <div class="text-2xl font-black text-emerald-400 tracking-tight">$1.44M</div>
-                <div class="text-[10px] text-emerald-400 font-medium">Positive Profit</div>
+                <div class="text-[10px] text-emerald-400 font-semibold">▲ 8.1% Net Gain</div>
+                <div class="text-[9px] text-slate-400">Net Earnings</div>
             </div>
 
             <!-- Profit Margin (Green) -->
             <div class="bg-slate-800 p-3 rounded-lg border-l-4 border-emerald-500 shadow border-slate-700 flex flex-col justify-between h-24">
-                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Margin</div>
+                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Profit Margin</div>
                 <div class="text-2xl font-black text-emerald-400 tracking-tight">10.8%</div>
-                <div class="text-[10px] text-slate-400">Target > 10.0%</div>
+                <div class="text-[10px] text-emerald-400 font-semibold">▲ 1.2% MoM Margin</div>
+                <div class="text-[9px] text-slate-400">Target > 10.0%</div>
             </div>
 
             <!-- Orders (Purple) -->
             <div class="bg-slate-800 p-3 rounded-lg border-l-4 border-purple-500 shadow border-slate-700 flex flex-col justify-between h-24">
-                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Orders</div>
+                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Total Orders</div>
                 <div class="text-2xl font-black text-purple-400 tracking-tight">10,000</div>
-                <div class="text-[10px] text-slate-400">Transactions</div>
+                <div class="text-[10px] text-purple-400 font-semibold">▲ 15.2% Volume</div>
+                <div class="text-[9px] text-slate-400">Order Transactions</div>
             </div>
 
             <!-- Customers (Teal) -->
             <div class="bg-slate-800 p-3 rounded-lg border-l-4 border-teal-500 shadow border-slate-700 flex flex-col justify-between h-24">
-                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Customers</div>
+                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Total Customers</div>
                 <div class="text-2xl font-black text-teal-400 tracking-tight">1,199</div>
-                <div class="text-[10px] text-slate-400">Active Buyers</div>
+                <div class="text-[10px] text-teal-400 font-semibold">▲ Active Buyers</div>
+                <div class="text-[9px] text-slate-400">Active Buyer Base</div>
             </div>
 
             <!-- Products (Indigo) -->
             <div class="bg-slate-800 p-3 rounded-lg border-l-4 border-indigo-500 shadow border-slate-700 flex flex-col justify-between h-24">
-                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Products</div>
+                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Products Sold</div>
                 <div class="text-2xl font-black text-indigo-400 tracking-tight">21 SKUs</div>
-                <div class="text-[10px] text-slate-400">Catalog Size</div>
+                <div class="text-[10px] text-indigo-400 font-semibold">Catalog Lines</div>
+                <div class="text-[9px] text-slate-400">Products Sold</div>
             </div>
 
             <!-- Avg Quantity (Orange) -->
             <div class="bg-slate-800 p-3 rounded-lg border-l-4 border-orange-500 shadow border-slate-700 flex flex-col justify-between h-24">
-                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Avg Qty</div>
+                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Avg Quantity</div>
                 <div class="text-2xl font-black text-orange-400 tracking-tight">2.77</div>
-                <div class="text-[10px] text-slate-400">Units / Order</div>
+                <div class="text-[10px] text-orange-400 font-semibold">Units / Basket</div>
+                <div class="text-[9px] text-slate-400">Average Units per Order</div>
             </div>
 
             <!-- Retention (Cyan) -->
             <div class="bg-slate-800 p-3 rounded-lg border-l-4 border-cyan-500 shadow border-slate-700 flex flex-col justify-between h-24">
-                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Retention</div>
+                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Retention Rate</div>
                 <div class="text-2xl font-black text-cyan-400 tracking-tight">99.8%</div>
-                <div class="text-[10px] text-slate-400">Repeat Buyers</div>
+                <div class="text-[10px] text-cyan-400 font-semibold">▲ Repeat Loyalty</div>
+                <div class="text-[9px] text-slate-400">Customer Retention</div>
             </div>
 
         </div>
@@ -116,9 +150,9 @@
             </div>
         </div>
 
-        <!-- Portfolio Dashboard Footer -->
+        <!-- Portfolio Dashboard Footer (Item 5) -->
         <footer class="text-center text-sm text-slate-400 pt-6 border-t border-slate-800">
-            <p><strong>Last Updated:</strong> 31 Jul 2026 &nbsp;|&nbsp; <strong>Data Source:</strong> Global Retail Sales Dataset (10,000 Records) &nbsp;|&nbsp; <strong>Developed by:</strong> Anubhuti Kaushik</p>
+            <p><strong>Data Source:</strong> Global Retail Sales Dataset &nbsp;|&nbsp; <strong>Reporting Period:</strong> 2023–2025 &nbsp;|&nbsp; <strong>Last Updated:</strong> Jul 2026 &nbsp;|&nbsp; <strong>Developed by:</strong> Anubhuti Kaushik</p>
         </footer>
     </div>
 

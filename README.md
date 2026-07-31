@@ -155,10 +155,11 @@ python python/generate_dataset.py
 python python/sales_eda_analysis.py
 ```
 
-### Step 3: Run Database Scripts in MySQL
-1. Open MySQL Workbench.
-2. Execute `sql/01_schema_and_import.sql` to create the schema and load `dataset/sales_data.csv`.
-3. Run `sql/02_kpi_and_basic_queries.sql`, `sql/03_business_queries_and_window_fx.sql`, and `sql/04_views_and_reports.sql`.
+### Step 4: Launch Interactive Localhost Streamlit Web Dashboard
+```bash
+python -m streamlit run app.py
+```
+*Open http://localhost:8501 in your browser to view the interactive application.*
 
 ---
 
