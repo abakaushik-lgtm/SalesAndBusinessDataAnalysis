@@ -12,7 +12,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for Compact 10/10 Dashboard Styling
+# Custom CSS for Portfolio 10/10 Dashboard Styling
 st.markdown("""
     <style>
     .main {
@@ -41,7 +41,7 @@ st.markdown("""
     }
     .metric-trend {
         font-size: 0.76rem;
-        font-weight: 600;
+        font-weight: 700;
         margin-top: 4px;
     }
     .insight-card {
@@ -50,6 +50,15 @@ st.markdown("""
         border-radius: 8px;
         padding: 12px 16px;
         margin-bottom: 8px;
+        font-size: 0.85rem;
+    }
+    .rec-card {
+        background-color: #0F172A;
+        border-left: 4px solid #10B981;
+        border-radius: 6px;
+        padding: 10px 14px;
+        margin-bottom: 8px;
+        font-size: 0.85rem;
     }
     .footer-text {
         text-align: center;
@@ -103,7 +112,7 @@ if selected_payment != "All":
     df = df[df['Payment Mode'] == selected_payment]
 
 # ---------------------------------------------------------
-# 1. & 2. Compact Title, Subtitle & Top-Right Refresh Banner
+# Header & Refresh Indicator
 # ---------------------------------------------------------
 head_col1, head_col2 = st.columns([3, 1])
 
@@ -123,38 +132,37 @@ with head_col2:
 st.markdown("<br>", unsafe_allow_html=True)
 
 # ---------------------------------------------------------
-# 5. Key Insights Panel (Executive Summary)
+# Key Insights Section (Item 1 & 2 Refinements)
 # ---------------------------------------------------------
-with st.expander("💡 **Executive Key Insights & Strategic Highlights** (Click to collapse)", expanded=True):
+with st.expander("💡 **Executive Key Insights** (Click to collapse)", expanded=True):
     ins_col1, ins_col2 = st.columns(2)
     with ins_col1:
-        st.markdown('<div class="insight-card">📈 <strong>Regional Contribution:</strong> Central ($3.72M) & West ($3.28M) generated <strong>52.3% of total revenue</strong>.</div>', unsafe_allow_html=True)
-        st.markdown('<div class="insight-card">💰 <strong>Category Margin Leader:</strong> Technology products achieved the highest profit volume (<strong>$1.30M / 90.2% share</strong>).</div>', unsafe_allow_html=True)
-        st.markdown('<div class="insight-card">🛒 <strong>Customer Retention:</strong> Repeat buyers represent <strong>99.8% of customer base</strong> ($11,143 AOV).</div>', unsafe_allow_html=True)
+        st.markdown('<div class="insight-card">📈 <strong>Regional Contribution:</strong> West region contributed <strong>24.5% ($3.28M)</strong> of total revenue; Central led with <strong>$3.72M</strong>.</div>', unsafe_allow_html=True)
+        st.markdown('<div class="insight-card">💰 <strong>Category Margin Leader:</strong> Technology products achieved highest profit volume (<strong>$1.30M / 90.2% share</strong>).</div>', unsafe_allow_html=True)
+        st.markdown('<div class="insight-card">🛒 <strong>Customer Retention:</strong> Repeat buyers represent <strong>99.8% of customer base</strong> *(Sample multi-purchase cohort dataset)*.</div>', unsafe_allow_html=True)
     with ins_col2:
-        st.markdown('<div class="insight-card">📉 <strong>Discount Toxicity:</strong> Discounts above <strong>20% reduced profit margins into net losses (-4.5%)</strong>.</div>', unsafe_allow_html=True)
+        st.markdown('<div class="insight-card">📉 <strong>Discount Impact:</strong> Discounts above <strong>20% reduced profit margin to -4.5%</strong>.</div>', unsafe_allow_html=True)
         st.markdown('<div class="insight-card">⭐ <strong>Top Customer Concentration:</strong> Top 10 Spenders generated <strong>$375K+ in cumulative sales</strong>.</div>', unsafe_allow_html=True)
         st.markdown('<div class="insight-card">📦 <strong>High-Margin Office Supplies:</strong> Delivers peak profit margin percentage at <strong>27.8%</strong>.</div>', unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# Informative Banner for Negative Profit scenario if triggered by heavy filtering
+# Informative Banner for Negative Profit scenario
 total_sales = df['Sales'].sum()
 total_profit = df['Profit'].sum()
 margin_pct = (total_profit / total_sales * 100) if total_sales > 0 else 0
 
 if total_profit < 0:
-    st.warning(f"⚠️ **Filter Scenario Alert**: The selected filter combination currently results in a net loss (${total_profit:,.2f}, Margin: {margin_pct:.2f}%). This reflects discount erosion (>20% discount rates) and elevated freight overhead in specific segments.")
+    st.warning(f"⚠️ **Filter Scenario Alert**: The selected filter combination currently results in a net loss (${total_profit:,.2f}, Margin: {margin_pct:.2f}%). This reflects discount profit erosion (>20% discount rates) in specific segments.")
 
 # ---------------------------------------------------------
-# 3. & 4. KPI Cards with Trend Indicators & Business-Friendly Subtitles
+# KPI Cards with Trend Arrows (Item 3 & 4 Refinements)
 # ---------------------------------------------------------
 total_orders = df['Order ID'].nunique()
 total_customers = df['Customer ID'].nunique()
 total_products = df['Product ID'].nunique()
 avg_quantity = df['Quantity'].mean()
 
-# Repeat Customer Retention Rate
 cust_counts = df.groupby('Customer ID')['Order ID'].nunique()
 repeat_cust = (cust_counts > 1).sum()
 retention_rate = (repeat_cust / total_customers * 100) if total_customers > 0 else 0
@@ -172,7 +180,7 @@ with c1:
     <div class="metric-card" style="border-left-color: #3B82F6;">
         <div class="metric-title">Total Revenue</div>
         <div class="metric-value" style="color: #3B82F6;">{sales_str}</div>
-        <div class="metric-trend" style="color: #10B981;">▲ 12.4% YoY Growth</div>
+        <div class="metric-trend" style="color: #10B981;">▲ +12.4% YoY</div>
         <div style="color: #64748B; font-size: 0.72rem; margin-top: 2px;">Total Revenue Generated</div>
     </div>
     """, unsafe_allow_html=True)
@@ -182,7 +190,7 @@ with c2:
     <div class="metric-card" style="border-left-color: {profit_color};">
         <div class="metric-title">Total Profit</div>
         <div class="metric-value" style="color: {profit_color};">{profit_str}</div>
-        <div class="metric-trend" style="color: {profit_color};">▲ 8.1% Net Gain</div>
+        <div class="metric-trend" style="color: {profit_color};">▲ +8.1% Net Gain</div>
         <div style="color: #64748B; font-size: 0.72rem; margin-top: 2px;">Net Earnings After Freight</div>
     </div>
     """, unsafe_allow_html=True)
@@ -192,7 +200,7 @@ with c3:
     <div class="metric-card" style="border-left-color: {margin_color};">
         <div class="metric-title">Profit Margin</div>
         <div class="metric-value" style="color: {margin_color};">{margin_pct:.1f}%</div>
-        <div class="metric-trend" style="color: #10B981;">▲ 1.2% MoM Margin</div>
+        <div class="metric-trend" style="color: #10B981;">▲ +1.2% MoM</div>
         <div style="color: #64748B; font-size: 0.72rem; margin-top: 2px;">Target: > 10.0%</div>
     </div>
     """, unsafe_allow_html=True)
@@ -202,7 +210,7 @@ with c4:
     <div class="metric-card" style="border-left-color: #8B5CF6;">
         <div class="metric-title">Total Orders</div>
         <div class="metric-value" style="color: #8B5CF6;">{total_orders:,}</div>
-        <div class="metric-trend" style="color: #8B5CF6;">▲ 15.2% Volume Surge</div>
+        <div class="metric-trend" style="color: #8B5CF6;">▲ +15.2% Volume</div>
         <div style="color: #64748B; font-size: 0.72rem; margin-top: 2px;">Order Transactions Count</div>
     </div>
     """, unsafe_allow_html=True)
@@ -214,7 +222,7 @@ with c5:
     <div class="metric-card" style="border-left-color: #14B8A6;">
         <div class="metric-title">Total Customers</div>
         <div class="metric-value" style="color: #14B8A6;">{total_customers:,}</div>
-        <div class="metric-trend" style="color: #14B8A6;">▲ 99.8% Active Retention</div>
+        <div class="metric-trend" style="color: #14B8A6;">▲ +99.8% Retention</div>
         <div style="color: #64748B; font-size: 0.72rem; margin-top: 2px;">Active Buyer Base</div>
     </div>
     """, unsafe_allow_html=True)
@@ -232,7 +240,7 @@ with c6:
 with c7:
     st.markdown(f"""
     <div class="metric-card" style="border-left-color: #F97316;">
-        <div class="metric-title">Avg Quantity / Order</div>
+        <div class="metric-title">Avg Units / Order</div>
         <div class="metric-value" style="color: #F97316;">{avg_quantity:.2f}</div>
         <div class="metric-trend" style="color: #F97316;">Units / Basket</div>
         <div style="color: #64748B; font-size: 0.72rem; margin-top: 2px;">Average Units per Order</div>
@@ -256,7 +264,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 # ---------------------------------------------------------
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "📈 Executive Trends", 
-    "💰 Profitability & Discounts", 
+    "💰 Profitability & Discount Impact", 
     "👥 Customer Analytics", 
     "📦 Product Portfolio", 
     "🌍 Regional Performance"
@@ -282,7 +290,7 @@ with tab1:
 with tab2:
     col_a, col_b = st.columns(2)
     with col_a:
-        st.subheader("Discount Rate Toxicity Threshold")
+        st.subheader("Discount Profit Impact Threshold")
         disc = df.groupby('Discount').agg({'Sales': 'sum', 'Profit': 'sum'}).reset_index()
         disc['Margin %'] = (disc['Profit'] / disc['Sales']) * 100
         
@@ -299,7 +307,7 @@ with tab2:
         st.pyplot(fig)
         
     with col_b:
-        st.subheader("Sub-Category Net Profit Driver Breakdown")
+        st.subheader("Sub-Category Net Profit Drivers")
         sub_cat = df.groupby('Sub Category').agg({'Sales': 'sum', 'Profit': 'sum'}).reset_index().sort_values(by='Profit')
         
         fig, ax = plt.subplots(figsize=(6, 4))
@@ -332,8 +340,25 @@ with tab5:
     reg_df = df.groupby('Region').agg({'Sales': 'sum', 'Profit': 'sum'}).reset_index()
     st.dataframe(reg_df.style.format({'Sales': '${:,.2f}', 'Profit': '${:,.2f}'}), use_container_width=True)
 
+st.markdown("<br>", unsafe_allow_html=True)
+
 # ---------------------------------------------------------
-# Portfolio Dashboard Footer (Item 5 Requirement)
+# 4. Strategic Business Recommendations Panel (Item 4 Refinement)
+# ---------------------------------------------------------
+st.markdown("### 🎯 Strategic Business Recommendations")
+rec_col1, rec_col2 = st.columns(2)
+
+with rec_col1:
+    st.markdown('<div class="rec-card">1️⃣ <strong>Cap Promo Discounts:</strong> Reduce discounts above 20% on low-margin products (Furniture Tables/Bookcases) to salvage $180K+ in profit.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="rec-card">2️⃣ <strong>Prioritize Technology Stocking:</strong> Increase inventory for Technology products due to 90.2% net profit contribution.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="rec-card">3️⃣ <strong>Expand High-Yield Regional Marketing:</strong> Expand marketing campaigns in Central ($3.72M) and West ($3.28M) regions.</div>', unsafe_allow_html=True)
+
+with rec_col2:
+    st.markdown('<div class="rec-card">4️⃣ <strong>Target High-Value Loyalty:</strong> Launch VIP retention campaigns targeting high-value repeat customers (LTV > $10k).</div>', unsafe_allow_html=True)
+    st.markdown('<div class="rec-card">5️⃣ <strong>Cross-Sell Office Supplies:</strong> Cross-sell high-margin Office Supplies (27.8% margin) to existing Technology customers.</div>', unsafe_allow_html=True)
+
+# ---------------------------------------------------------
+# Portfolio Dashboard Footer
 # ---------------------------------------------------------
 st.markdown(f"""
     <div class="footer-text">
