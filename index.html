@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Retail Corp - Sales & Business Analytics Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans p-6">
+    <div class="max-w-7xl mx-auto space-y-6">
+        
+        <!-- Header Banner -->
+        <header class="flex justify-between items-center bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg">
+            <div>
+                <h1 class="text-3xl font-bold text-white tracking-wide">Global Retail Corp</h1>
+                <p class="text-slate-400 text-sm mt-1">Enterprise Sales & Business Analytics Executive Dashboard (2023 - 2025)</p>
+            </div>
+            <div class="text-right">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    🟢 Live Local Server Active
+                </span>
+                <p class="text-xs text-slate-400 mt-2">10,000 Order Transactions</p>
+            </div>
+        </header>
+
+        <!-- Executive KPI Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div class="bg-slate-800 p-5 rounded-xl border-l-4 border-blue-500 shadow border-slate-700">
+                <div class="text-xs font-semibold text-slate-400">Total Revenue</div>
+                <div class="text-2xl font-extrabold text-white mt-1">$13,361,590</div>
+                <div class="text-xs text-emerald-400 mt-1">↑ 100% Target Met</div>
+            </div>
+            <div class="bg-slate-800 p-5 rounded-xl border-l-4 border-emerald-500 shadow border-slate-700">
+                <div class="text-xs font-semibold text-slate-400">Total Net Profit</div>
+                <div class="text-2xl font-extrabold text-white mt-1">$1,437,443</div>
+                <div class="text-xs text-emerald-400 mt-1">Net Earnings</div>
+            </div>
+            <div class="bg-slate-800 p-5 rounded-xl border-l-4 border-amber-500 shadow border-slate-700">
+                <div class="text-xs font-semibold text-slate-400">Profit Margin</div>
+                <div class="text-2xl font-extrabold text-white mt-1">10.76%</div>
+                <div class="text-xs text-amber-400 mt-1">Overall Margin</div>
+            </div>
+            <div class="bg-slate-800 p-5 rounded-xl border-l-4 border-purple-500 shadow border-slate-700">
+                <div class="text-xs font-semibold text-slate-400">Total Orders</div>
+                <div class="text-2xl font-extrabold text-white mt-1">10,000</div>
+                <div class="text-xs text-purple-400 mt-1">Transactions</div>
+            </div>
+            <div class="bg-slate-800 p-5 rounded-xl border-l-4 border-cyan-500 shadow border-slate-700">
+                <div class="text-xs font-semibold text-slate-400">Avg Order Value</div>
+                <div class="text-2xl font-extrabold text-white mt-1">$1,336.16</div>
+                <div class="text-xs text-cyan-400 mt-1">AOV per Cart</div>
+            </div>
+            <div class="bg-slate-800 p-5 rounded-xl border-l-4 border-pink-500 shadow border-slate-700">
+                <div class="text-xs font-semibold text-slate-400">Avg Discount</div>
+                <div class="text-2xl font-extrabold text-white mt-1">9.64%</div>
+                <div class="text-xs text-pink-400 mt-1">Promo Average</div>
+            </div>
+        </div>
+
+        <!-- Interactive Charts Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Monthly Trend Chart -->
+            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow">
+                <h2 class="text-lg font-bold text-white mb-4">Monthly Revenue vs Net Profit ($K)</h2>
+                <canvas id="monthlyTrendChart" height="200"></canvas>
+            </div>
+            <!-- Category Profitability Chart -->
+            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow">
+                <h2 class="text-lg font-bold text-white mb-4">Category Revenue vs Profit Margin</h2>
+                <canvas id="categoryChart" height="200"></canvas>
+            </div>
+        </div>
+
+        <!-- Discount Toxicity Matrix & Regional Distribution -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow">
+                <h2 class="text-lg font-bold text-white mb-4">Discount Rate Toxicity (%)</h2>
+                <canvas id="discountChart" height="200"></canvas>
+            </div>
+            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow">
+                <h2 class="text-lg font-bold text-white mb-4">Regional Revenue Share</h2>
+                <canvas id="regionalChart" height="200"></canvas>
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <footer class="text-center text-xs text-slate-500 pt-6">
+            Global Retail Corp Data Analytics System &bull; Active on Localhost Port 8000 & 8501 &bull; Powered by Python, SQL & Power BI Specs
+        </footer>
+    </div>
+
+    <script>
+        // Monthly Trend Chart
+        new Chart(document.getElementById('monthlyTrendChart'), {
+            type: 'line',
+            data: {
+                labels: ['Jan 23', 'Feb 23', 'Mar 23', 'Apr 23', 'May 23', 'Jun 23', 'Jul 23', 'Aug 23', 'Sep 23', 'Oct 23', 'Nov 23', 'Dec 23'],
+                datasets: [{
+                    label: 'Sales ($K)',
+                    data: [415.8, 384.5, 378.3, 403.8, 387.9, 428.2, 395.1, 412.0, 430.5, 445.2, 580.1, 620.4],
+                    borderColor: '#38BDF8',
+                    backgroundColor: 'rgba(56, 189, 248, 0.1)',
+                    tension: 0.3,
+                    fill: true
+                }, {
+                    label: 'Profit ($K)',
+                    data: [47.6, 44.8, 38.9, 52.0, 41.1, 53.2, 42.5, 45.1, 48.9, 51.2, 68.4, 75.2],
+                    borderColor: '#34D399',
+                    backgroundColor: 'rgba(52, 211, 153, 0.1)',
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { labels: { color: '#94A3B8' } } },
+                scales: { x: { ticks: { color: '#94A3B8' } }, y: { ticks: { color: '#94A3B8' } } }
+            }
+        });
+
+        // Category Chart
+        new Chart(document.getElementById('categoryChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Technology', 'Furniture', 'Office Supplies'],
+                datasets: [{
+                    label: 'Sales ($M)',
+                    data: [9.52, 3.67, 0.17],
+                    backgroundColor: '#38BDF8'
+                }, {
+                    label: 'Profit ($M)',
+                    data: [1.30, 0.09, 0.05],
+                    backgroundColor: '#34D399'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { labels: { color: '#94A3B8' } } },
+                scales: { x: { ticks: { color: '#94A3B8' } }, y: { ticks: { color: '#94A3B8' } } }
+            }
+        });
+
+        // Discount Chart
+        new Chart(document.getElementById('discountChart'), {
+            type: 'bar',
+            data: {
+                labels: ['0%', '5%', '10%', '15%', '20%', '25%', '30%', '35%', '40%', '50%'],
+                datasets: [{
+                    label: 'Profit Margin %',
+                    data: [17.37, 13.86, 10.41, 6.49, -1.30, -4.16, -7.22, -9.12, -12.10, -8.91],
+                    backgroundColor: function(context) {
+                        return context.raw >= 0 ? '#34D399' : '#F87171';
+                    }
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { labels: { color: '#94A3B8' } } },
+                scales: { x: { ticks: { color: '#94A3B8' } }, y: { ticks: { color: '#94A3B8' } } }
+            }
+        });
+
+        // Regional Chart
+        new Chart(document.getElementById('regionalChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Central ($3.72M)', 'West ($3.28M)', 'South ($3.26M)', 'East ($3.10M)'],
+                datasets: [{
+                    data: [3.72, 3.28, 3.26, 3.10],
+                    backgroundColor: ['#38BDF8', '#34D399', '#FBBF24', '#A855F7']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { labels: { color: '#94A3B8' } } }
+            }
+        });
+    </script>
+</body>
+</html>
